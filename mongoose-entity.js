@@ -25,8 +25,6 @@ module.exports = function(opts) {
     var skip = args.skip;
     var sort = args.sort;
     var filters = args.filters;
-    // console.log('==========findall==========');
-    // console.log(args);
 
     Promise.all([
       Model.count(filters),
