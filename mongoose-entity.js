@@ -1,10 +1,7 @@
-var mongoose = require('mongoose');
-
 module.exports = function(opts) {
 
   var seneca = this;
-
-  var models = opts.models;
+  var mongoose;
 
   seneca.add('init:mongoose-entity', init);
   seneca.add('role:mongoose-entity, cmd:find-all', findAll);
@@ -16,20 +13,20 @@ module.exports = function(opts) {
   return;
 
   function init(args, done) {
-    var mongodb = opts.mongodb;
-    mongoose.connect(mongodb);
+    mongoose = opts.mongoose;
     done();
   }
 
   function findAll(args, done) {
     var model = args.model;
-    var Model = models[model];
+    var Model = mongoose.model(model);
+
+    console.log('model', model);
 
     Promise.all([
       Model.count(),
       Model.find()
     ]).then(function(results) {
-      console.log('find all', Model);
       done(null, {
         count: results[0],
         entities: results[1]
@@ -40,11 +37,9 @@ module.exports = function(opts) {
   function create(args, done) {
     var data = args.data;
     var model = args.model;
-    var Model = models[model];
+    var Model = mongoose.model(model);
 
-    delete data.model;
-
-    var entity = new Model(args);
+    var entity = new Model(data);
     entity.save().then(function() {
       done(null, entity);
     }).catch(done);
@@ -53,7 +48,7 @@ module.exports = function(opts) {
   function findById(args, done) {
     var id = args.id;
     var model = args.model;
-    var Model = models[model];
+    var Model = mongoose.model(model);
 
     Model.findById(id).then(function(entity) {
       done(null, entity)
@@ -64,7 +59,7 @@ module.exports = function(opts) {
     var id = args.id;
     var data = args.data;
     var model = args.model;
-    var Model = models[model];
+    var Model = mongoose.model(model);
 
     Model.findByIdAndUpdate(id, data).then(function(entity) {
       done(null, entity)
@@ -74,7 +69,7 @@ module.exports = function(opts) {
   function destroyById(args, done) {
     var id = args.id;
     var model = args.model;
-    var Model = models[model];
+    var Model = mongoose.model(model);
 
     Model.findByIdAndRemove(id).then(function(entity) {
       done(null, entity)
