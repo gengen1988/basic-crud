@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gengen1988/basic-crud.git"
+    "url": "git+https://github.com/gengen1988/seneca-basic-crud.git"
   },
   "keywords": [],
   "author": "Gen Liu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gengen1988/basic-crud/issues"
+    "url": "https://github.com/gengen1988/seneca-basic-crud/issues"
   },
-  "homepage": "https://github.com/gengen1988/basic-crud#readme"
+  "homepage": "https://github.com/gengen1988/seneca-basic-crud#readme"
 }
