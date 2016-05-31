@@ -1,0 +1,23 @@
+{
+  "name": "seneca-mongoose-entity",
+  "version": "0.0.1",
+  "description": "crud",
+  "main": "mongoose-entity.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gengen1988/seneca-mongoose-entity.git"
+  },
+  "keywords": [],
+  "author": "Gen Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gengen1988/seneca-mongoose-entity/issues"
+  },
+  "homepage": "https://github.com/gengen1988/seneca-mongoose-entity#readme",
+  "dependencies": {
+    "mongoose": "^4.4.19"
+  }
+}
