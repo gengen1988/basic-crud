@@ -1,23 +1,20 @@
 {
-  "name": "seneca-mongoose-entity",
-  "version": "0.0.1",
-  "description": "crud",
-  "main": "mongoose-entity.js",
+  "name": "basic-crud",
+  "version": "0.0.2",
+  "description": "",
+  "main": "basic-crud.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gengen1988/seneca-mongoose-entity.git"
+    "url": "git+https://github.com/gengen1988/basic-crud.git"
   },
   "keywords": [],
   "author": "Gen Liu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gengen1988/seneca-mongoose-entity/issues"
+    "url": "https://github.com/gengen1988/basic-crud/issues"
   },
-  "homepage": "https://github.com/gengen1988/seneca-mongoose-entity#readme",
-  "dependencies": {
-    "mongoose": "^4.4.19"
-  }
+  "homepage": "https://github.com/gengen1988/basic-crud#readme"
 }
