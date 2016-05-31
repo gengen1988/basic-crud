@@ -1,5 +1,5 @@
 {
-  "name": "basic-crud",
+  "name": "seneca-basic-crud",
   "version": "0.0.2",
   "description": "",
   "main": "basic-crud.js",
